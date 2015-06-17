@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="music">
+  <head>
+    <title>Hello World!</title>
+    <script  type="text/javascript" src="">
+    bower_components/angular/angular.js
+    </script>
+    </script>
+    <script type="text/javascript" src="react-0.13.3/build/react.js">
+    </script>
+    <script type="text/javascript" src="react-0.13.3/build/JSXTransformer.js">
+    </script>
+    <script type="text/javascript">
+    src="app/controllers/main.js"
+    </script>
+
+  </head>
+  <body ng-controller="mainCtrl">
+      <div class="x-nav-bar"></div>
+      <div>
+      {{message}}
+      </div>
+
+      <input type="text" ng-model="message">
+  </body>
+</html>
