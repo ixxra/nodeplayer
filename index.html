@@ -4,25 +4,27 @@
     <title>Hello World!</title>
     <script type="text/javascript" src="bower_components/angular/angular.js">
     </script>
-    <script type="text/javascript" src="app/app.js">
-    </script>
+    <script type="text/javascript" src="app/app.js"></script>
   </head>
   <body>
-      <div ng-controller="filesCtrl">
-          <h1>Files</h1>
-          <form name="filesForm">
-            <input type="file" multiple files-model="fileList">
-            <input type="text" ng-model="message">
-            <button type="submit">Add</button>
-
-            <div>
-              {{filesForm.fileList}}
-            </div>
-            <div>
-              {{message}}
-            </div>
-
-          </form>
-      </div>
+      <div ng-controller="MediaPlayer">
+        <input type="file" multiple files-model="fileList">
+        <div>
+          <header><h1>Playlist</h1></header>
+          <ul>
+            <li ng-repeat="track in fileList">
+              <a href="" ng-click="play(track)">{{track.title}}</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <button ng-click="prev()">Prev</button>
+          <button ng-click="play()">Play</button>
+          <button ng-click="next()">Next</button>
+          <div>
+            {{current.title}}
+          </div>
+        </div>
+    </div>
   </body>
 </html>
