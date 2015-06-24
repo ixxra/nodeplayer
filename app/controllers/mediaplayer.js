@@ -6,7 +6,9 @@ module.exports = function LOADER(angular){
         $scope.current = track.new();
 
         $scope.play = function play(track) {
-          $scope.current = track;
+          if (track){
+            $scope.current = track;
+          }
         };
 
         $scope.next = function next () {

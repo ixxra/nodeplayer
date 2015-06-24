@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html ng-app="music">
   <head>
-    <title>Hello World!</title>
+    <link rel="stylesheet" href="assets/vendor/foundation/css/foundation.css">
+    <link rel="stylesheet" href="assets/vendor/foundation-icons/foundation-icons.css">
+    <title ng-controller="MediaPlayer">Now Playing: {{current.title}}</title>
     <script type="text/javascript" src="bower_components/angular/angular.js">
     </script>
     <script type="text/javascript" src="app/app.js"></script>
@@ -11,20 +13,29 @@
         <input type="file" multiple files-model="fileList">
         <div>
           <header><h1>Playlist</h1></header>
-          <ul>
-            <li ng-repeat="track in fileList">
-              <a href="" ng-click="play(track)">{{track.title}}</a>
-            </li>
-          </ul>
+
+            <div class="row" ng-repeat="track in fileList">
+              <div class="small-12 columns">
+                <a href="" ng-click="play(track)">{{track.title}}</a>
+              </div>
+            </div>
+
         </div>
         <div>
-          <button ng-click="prev()">Prev</button>
-          <button ng-click="play()">Play</button>
-          <button ng-click="next()">Next</button>
+          <button ng-click="prev()" class="fi-previous"></button>
+          <button ng-click="play()" class="fi-play"></button>
+          <button ng-click="next()" class="fi-next"></button>
           <div>
             {{current.title}}
           </div>
         </div>
+        <audio
+          src="{{current.src}}"
+          controls
+          autoplay
+          media-player
+          on-ended="next"
+        ></audio>
     </div>
   </body>
 </html>
