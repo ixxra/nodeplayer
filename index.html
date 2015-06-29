@@ -9,14 +9,38 @@
     <script type="text/javascript" src="app/app.js"></script>
   </head>
   <body>
+    <div>
+      <div class="small-12 columns">
+        <div>
+          <div class="small-3 columns">
+            <ul class="side-nav">
+                <li>Queue</li>
+                <li>Playlists</li>
+                <li>Library</li>
+                <li>Folders</li>
+                <li>Configure</li>
+              </ul>
+            </div>
+        </div>
+        <div class="small-6 columns">
       <div ng-controller="MediaPlayer">
-        <input type="file" multiple files-model="fileList">
         <div>
           <header><h1>Playlist</h1></header>
-
+            <div>
+              <button ng-click="clear()"><i class="fi-x"></i></button>
+              <button>Sort</button>
+              <input type="file" multiple files-model="fileList">
+            </div>
             <div class="row" ng-repeat="track in fileList">
-              <div class="small-12 columns">
-                <a href="" ng-click="play(track)">{{track.title}}</a>
+              <div class="row">
+                <div class="small-12 columns">
+                  <a href="" ng-click="play(track)">{{track.title}}</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="small-12 columns">
+                  {{track.artist}}
+                </div>
               </div>
             </div>
 
@@ -36,6 +60,9 @@
           media-player
           on-ended="next"
         ></audio>
+        </div>
+      </div>
+      </div>
     </div>
   </body>
 </html>

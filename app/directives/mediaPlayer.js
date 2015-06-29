@@ -11,9 +11,9 @@ module.exports  = function mediaPlayer(angular) {
             };
         }
       }
-      console.log(elm);
-      console.log(scope);
-      console.log(attrs);
+      //console.log(elm);
+      //console.log(scope);
+      //console.log(attrs);
     }
   };
 

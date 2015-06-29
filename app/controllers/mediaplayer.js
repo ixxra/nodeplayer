@@ -5,6 +5,10 @@ module.exports = function LOADER(angular){
         $scope.fileList = [];
         $scope.current = track.new();
 
+        $scope.clear = function clear(){
+          $scope.fileList = [];
+        };
+
         $scope.play = function play(track) {
           if (track){
             $scope.current = track;
